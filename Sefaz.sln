@@ -22,9 +22,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sefaz.Configuracao", "Sefaz.Configuracao\Sefaz.Configuracao.csproj", "{46530F22-6A36-4A7F-9EC7-E1A4C90D0779}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{E42914F6-144A-4504-BE8E-4E854A87684B}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Downloads\New folder\SefazProcess-master\sefazProcess\loadCreateInsert.txt = ..\..\..\..\Downloads\New folder\SefazProcess-master\sefazProcess\loadCreateInsert.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sefaz.Web.API", "Sefaz.Web.API\Sefaz.Web.API.csproj", "{0EBE0A67-F818-425D-84A7-E74FDD7A9924}"
 EndProject
