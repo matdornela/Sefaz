@@ -18,7 +18,7 @@ namespace Sefaz.Api.Controllers
             _workService = workService;
         }
 
-        // GET api/produto/Import
+        // GET api/produto/ImportarDados
         [ProducesResponseType(200)]
         [HttpGet]
         [Route("ImportarDados")]
