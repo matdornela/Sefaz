@@ -2,7 +2,7 @@
 Este projeto foi desenvolvido para o Processo Seletivo 2020 da SEFAZ, onde consiste em construir uma API (REST/JSON) para consulta e recuperação de produtos, filtrada pelo código GTIN (EAN) e ordenada de forma crescente pelo preço.
 
 Para esse projeto foram utilizadas as seguintes tecnologias:
-- NET Core 3.1 para construção de uma Web API
+- .NET Core 3.1 para construção de uma Web API
 - Entity Framework Core
 - SQLite
 
