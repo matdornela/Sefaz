@@ -9,5 +9,5 @@ Para esse projeto foram utilizadas as seguintes tecnologias:
 ## Passo-a-Passo para execução do Projeto
 1. Baixe e rode o projeto pelo Visual Studio (Projeto foi construído através do VS 2019), e então será redicionada a aplicação para uma página web do Swagger, onde foi utilizado para facilitar o teste e documentação da API.
 2. Execute a rota disponível na página **/api/v1/Import**  através do Swagger(Isso fará a importação dos dados do arquivo CSV para o Banco de Dados SQlite)
-3. Execute a API **api/v1/Produto/?CodigoGtin=valor** para consultar produtos do Banco de Dados, onde será listado o último produto vendido de cadas estabelecimento, ordenado pelo menor preço.
+3. Execute a API **api/v1/Produto/?CodigoGtin=valor** para consultar produtos do Banco de Dados, onde será listado o último produto vendido de cada estabelecimento, ordenado pelo menor preço.
 
