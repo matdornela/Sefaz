@@ -1,7 +1,6 @@
 ﻿using Sefaz.Dominio.Modelo.Interfaces;
 using Sefaz.Dominio.Modelo.Models;
 using System.Collections.Generic;
-using Sefaz.Dominio.Exceptions;
 
 namespace Sefaz.Dominio.BLL.BLL
 {
