@@ -1,1 +1,0 @@
-sqlite3 sefazDatabase.db < loadCreateInsert.txt

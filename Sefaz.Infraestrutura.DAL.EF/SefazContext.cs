@@ -3,11 +3,11 @@ using Sefaz.Infraestrutura.DAL.EF.Models;
 
 namespace Sefaz.Infraestrutura.DAL.EF
 {
-    public class SefazContext
+    public class SefazContext : DbContext
     {
-        protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Sefaz.db");
+            optionsBuilder.UseSqlite("Filename=sefazDatabase.db");
         }
 
         public DbSet<Produto> Produto { get; set; }
