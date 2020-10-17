@@ -27,8 +27,5 @@ namespace Sefaz.Infraestrutura.DAL.EF.Models
         public long CodigoCep { get; set; }
         public string NumeroLatitude { get; set; }
         public string NumeroLongitude { get; set; }
-
-        [NotMapped]
-        public string UrlCoordinator { get; set; }
     }
 }

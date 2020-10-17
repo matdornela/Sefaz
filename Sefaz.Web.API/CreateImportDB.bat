@@ -1,1 +1,1 @@
-sqlite3 sefazDatabase.db < loadCreateInsert.txt
+sqlite3 sefazProduct.db < loadCreateInsert.txt

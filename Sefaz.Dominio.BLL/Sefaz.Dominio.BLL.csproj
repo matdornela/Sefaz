@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BLL\" />
+    <ProjectReference Include="..\Sefaz.Dominio.Modelo\Sefaz.Dominio.Modelo.csproj" />
   </ItemGroup>
 
 </Project>

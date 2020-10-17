@@ -1,0 +1,66 @@
+drop table IF EXISTS ProductMock;
+drop table IF EXISTS Product;
+
+CREATE TABLE "ProductMock" (
+	"codigoGTIN"	INTEGER NOT NULL,
+	"dataEmissao"	text NOT NULL,
+	"codigoTipoPagamento"	INTEGER NOT NULL,
+	"codigoProduto"	INTEGER,
+	"codigoNCM"	INTEGER,
+	"codigoUnidade"	text,
+	"descricaoProduto"	TEXT,
+	"valorUnitario"	INTEGER,
+	"idEstabelecimento"	INTEGER,
+	"nomeEstabelecimento"	TEXT,
+	"nomeLogradouro"	TEXT,
+	"codigoNumLogradouro"	INTEGER,
+	"complemento"	TEXT,
+	"nomeBairro"	TEXT,
+	"codigoMunicipioIBGE"	INTEGER,
+	"nomeMunicipio"	TEXT,
+	"nomeSiglaUF"	TEXT,
+	"codCep"	INTEGER,
+	"numeroLatitude"	text,
+	"numeroLongitude"	text
+);
+
+CREATE TABLE "Product" (
+	"id" INTEGER NOT NULL,
+	"codigoGTIN"	INTEGER NOT NULL,
+	"dataEmissao"	text NOT NULL,
+	"codigoTipoPagamento"	INTEGER NOT NULL,
+	"codigoProduto"	INTEGER,
+	"codigoNCM"	INTEGER,
+	"codigoUnidade"	text,
+	"descricaoProduto"	TEXT,
+	"valorUnitario"	INTEGER,
+	"idEstabelecimento"	INTEGER,
+	"nomeEstabelecimento"	TEXT,
+	"nomeLogradouro"	TEXT,
+	"codigoNumLogradouro"	INTEGER,
+	"complemento"	TEXT,
+	"nomeBairro"	TEXT,
+	"codigoMunicipioIBGE"	INTEGER,
+	"nomeMunicipio"	TEXT,
+	"nomeSiglaUF"	TEXT,
+	"codCep"	INTEGER,
+	"numeroLatitude"	text,
+	"numeroLongitude"	text,
+	PRIMARY key (id)
+);
+
+.mode csv
+.import sefaz.csv ProductMock
+
+delete from ProductMock where codigoGTIN like '%COD_GTIN%';
+
+insert into Product (codigoGTIN,dataEmissao,codigoTipoPagamento,codigoProduto,codigoNCM,codigoUnidade,
+descricaoProduto,valorUnitario,idEstabelecimento,nomeEstabelecimento,nomeLogradouro,
+codigoNumLogradouro,complemento,nomeBairro,codigoMunicipioIBGE,nomeMunicipio,nomeSiglaUF,codCep,
+numeroLatitude,numeroLongitude) 
+select codigoGTIN,dataEmissao,codigoTipoPagamento,codigoProduto,codigoNCM,codigoUnidade,descricaoProduto,
+valorUnitario,idEstabelecimento,nomeEstabelecimento,nomeLogradouro,
+codigoNumLogradouro,complemento,nomeBairro,codigoMunicipioIBGE,nomeMunicipio,nomeSiglaUF,codCep,numeroLatitude
+,numeroLongitude from ProductMock;
+
+drop table IF EXISTS ProductMock;
