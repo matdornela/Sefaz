@@ -21,8 +21,8 @@ namespace Sefaz.Api.Controllers
         // GET api/produto/Import
         [ProducesResponseType(200)]
         [HttpGet]
-        [Route("Import")]
-        public IActionResult Import()
+        [Route("ImportarDados")]
+        public IActionResult ImportarDados()
         {
             try
             {
