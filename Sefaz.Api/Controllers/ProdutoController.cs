@@ -50,12 +50,12 @@ namespace Sefaz.Api.Controllers
         // GET /api/v1/Produto/?CodigoGtin=
         [ProducesResponseType((200), Type = typeof(List<ProdutoDTO>))]
         [HttpGet, Route("Produtos")]
-        public IActionResult GetProdutos([FromQuery] long CodigoGtin)
+        public IActionResult GetProdutos([FromQuery] long CodigoGtin, string inputLatitude = null, string inputLongitude = null)
         {
             if (CodigoGtin != 0)
                 try
                 {
-                    var produtos = _workService.ObterProdutos(CodigoGtin);
+                    var produtos = _workService.ObterProdutos(CodigoGtin, inputLatitude, inputLongitude);
                     return Ok(produtos);
                 }
                 catch (SefazException)

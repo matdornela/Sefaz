@@ -30,5 +30,8 @@ namespace Sefaz.Apresentacao.DTOs
 
         [NotMapped]
         public string UrlGoogleMaps { get; set; }
+        [NotMapped]
+        public double DistanciaKm { get; set; }
+
     }
 }
