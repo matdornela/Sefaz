@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sefaz.Apresentacao.DTOs;
+using Sefaz.Apresentacao.Exceptions;
 using Sefaz.Apresentacao.WorkServices;
 using Sefaz.Dominio.Exceptions;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Sefaz.Api.Controllers
 {
-    [Route("api/v1/[controller]")]
+    [Route("v1/produtos")]
     [ApiController]
     public class ProdutoController : ControllerBase
     {
@@ -18,11 +17,10 @@ namespace Sefaz.Api.Controllers
             _workService = workService;
         }
 
-        // GET api/produto/ImportarDados
-        [ProducesResponseType(200)]
+        // GET /v1/produtos/importar
         [HttpGet]
-        [Route("ImportarDados")]
-        public IActionResult ImportarDados()
+        [Route("importar")]
+        public IActionResult Importar()
         {
             try
             {
@@ -47,23 +45,23 @@ namespace Sefaz.Api.Controllers
             }
         }
 
-        // GET /api/v1/Produto/?CodigoGtin=
-        [ProducesResponseType((200), Type = typeof(List<ProdutoDTO>))]
-        [HttpGet, Route("Produtos")]
-        public IActionResult GetProdutos([FromQuery] long CodigoGtin, string inputLatitude = null, string inputLongitude = null)
+        // GET /v1/produtos/?CodigoGtin=
+        [HttpGet]
+        public IActionResult GetProdutos([FromQuery] long codigoGtin, string inputLatitude, string inputLongitude)
         {
-            if (CodigoGtin != 0)
-                try
-                {
-                    var produtos = _workService.ObterProdutos(CodigoGtin, inputLatitude, inputLongitude);
-                    return Ok(produtos);
-                }
-                catch (SefazException)
-                {
-                    return NotFound("Registro não encontrado");
-                }
-
-            return BadRequest();
+            try
+            {
+                var produtos = _workService.ObterListaUltimoProdutoVendidoPorEstabelecimento(codigoGtin, inputLatitude, inputLongitude);
+                return Ok(produtos);
+            }
+            catch (SefazException)
+            {
+                return NotFound("Registro não encontrado");
+            }
+            catch (UIException)
+            {
+                return BadRequest();
+            }
         }
     }
 }

@@ -19,18 +19,12 @@ namespace Sefaz.Infraestrutura.DAL.EF.Repositorios
 
         public List<ProdutoModel> ObterProdutos(long codigoGtin)
         {
-            var produtos = _context.Produto
-                .Where(p => p.CodigoGtin == codigoGtin && p.NumeroLatitude != "" && p.NumeroLongitude != "")
-                .ToList();
+
+            var produtos = _context.Produto.Where(p => p.CodigoGtin == codigoGtin).ToList();
 
             if (produtos.Count == 0) throw new SefazException("Não foram encontrados registros");
 
-            var ultimoProdutoVendidoPorCadaEstabelecimento = produtos
-                .GroupBy(x => x.EstabelecimentoId)
-                .SelectMany(g => g.Where(x => x.DataEmissao == g.Max(y => y.DataEmissao)))
-                .OrderBy(x => x.ValorUnitario).ToList();
-
-            return Mapper.Map<List<Produto>, List<ProdutoModel>>(ultimoProdutoVendidoPorCadaEstabelecimento);
+            return Mapper.Map<List<Produto>, List<ProdutoModel>>(produtos);
         }
     }
 }
