@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GeoCoordinatePortable;
 using Sefaz.Apresentacao.DTOs;
 using Sefaz.Apresentacao.Exceptions;
 using Sefaz.Dominio.BLL.BLL;
@@ -6,7 +7,6 @@ using Sefaz.Dominio.Exceptions;
 using Sefaz.Dominio.Modelo.Models;
 using System;
 using System.Collections.Generic;
-using System.Device.Location;
 
 namespace Sefaz.Apresentacao.WorkServices
 {
@@ -52,7 +52,6 @@ namespace Sefaz.Apresentacao.WorkServices
                 }
                 else
                 {
-
                     throw new UIException(e.Message);
                 }
             }
