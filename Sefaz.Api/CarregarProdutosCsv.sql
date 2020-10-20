@@ -1,3 +1,8 @@
+drop table IF EXISTS Produto;
+
+drop table IF EXISTS ProdutoFalso;
+
+
 CREATE TABLE "ProdutoFalso" (
 	"CodigoGtin"	INTEGER NOT NULL,
 	"DataEmissao"	text NOT NULL,

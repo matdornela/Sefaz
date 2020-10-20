@@ -361,5 +361,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Sefaz.Api/sefazDatabase.db
-/Sefaz.Api/sefazDatabase.db-shm
 /Sefaz.Api/sefazDatabase.db-wal
+/Sefaz.Api/sefazDatabase.db-shm
