@@ -6,8 +6,8 @@ Para esse projeto foram utilizadas as seguintes tecnologias:
 - Entity Framework Core
 - SQLite
 
-## Passo-a-Passo para execução do Projeto
+## Passo-a-passo para execução do Projeto
 1. Baixe a solution e rode o projeto **Sefaz.Api** pelo Visual Studio, localizado dentro da pasta **UI** na Solution Explorer. Após isso será redicionada a aplicação para uma página web do Swagger, onde foi utilizado para facilitar o teste e documentação da API.
-2. Execute a rota disponível na página **/v1/produtos/ImportarDados**  através do Swagger (isso fará a importação dos dados do arquivo CSV para o Banco de Dados SQLite)
+2. Execute a rota disponível na página **/v1/produtos/importar**  através do Swagger (isso fará a importação dos dados do arquivo CSV para o Banco de Dados SQLite)
 3. Execute a API na rota **/v1/produtos/?CodigoGtin=valor** para consultar produtos do Banco de Dados, onde será listado o último produto vendido de cada estabelecimento, ordenado pelo menor preço.
 
